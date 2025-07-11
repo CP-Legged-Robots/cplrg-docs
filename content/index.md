@@ -33,7 +33,7 @@ title: Cal Poly Legged Robotics Group
 ## Site structure
 CPLRG homepage
 - [[Projects]]
-	- [[The SWITCH Platform]]
+	- [[Switch]]
 	- [[8-DOF MPC]]
 	- [[John's Thesis]]
 	- [[Bradley's Thesis]]
