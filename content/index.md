@@ -45,7 +45,7 @@ CPLRG homepage
 		- [[ROS2 control]]
 		- [[Gazebo]]
 	- [[Isaac]]
-	- [[Git]]
+	- [[GIT]]
 	- [[VSCode]]
 	- [[Docker]]
 	- [[Python]]

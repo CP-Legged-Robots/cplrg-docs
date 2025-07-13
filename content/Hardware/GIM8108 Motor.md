@@ -1,3 +1,5 @@
+
+
 # CAN
 
 The motors return state information whenever a command with their address is received.
@@ -20,3 +22,16 @@ Prolific pushed an update that bricks knock off chips. Downgrading fixes the iss
 
 1. Remove existing driver. 
 2. Install driver 3.8.25.
+
+
+# Resources
+
+Steadywin GIM8108 Documentation: [https://docs.google.com/document/d/1QIEI6IdHOcW4N1cRyucb33io4LriNYafIMs1sjLfTQU/edit](https://docs.google.com/document/d/1QIEI6IdHOcW4N1cRyucb33io4LriNYafIMs1sjLfTQU/edit)
+
+
+Ben Katz Motor Drive Documentation: [https://docs.google.com/document/d/1dzNVzblz6mqB3eZVEMyi2MtSngALHdgpTaDJIW_BpS4/edit](https://docs.google.com/document/d/1dzNVzblz6mqB3eZVEMyi2MtSngALHdgpTaDJIW_BpS4/edit)
+
+programming
+	https://docs.google.com/document/d/14HLpJDV0MBez1FP9UIyuWOAR9XkmXL5tUZTvC5LI0m8/edit
+
+
