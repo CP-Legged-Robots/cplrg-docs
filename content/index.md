@@ -72,7 +72,7 @@ CPLRG homepage
 **Jeremy**
 John's Thesis
 Hardware and all subpages
-Switch tutorial
+Switch tutorials
 Git
 VSCode
 Docker
