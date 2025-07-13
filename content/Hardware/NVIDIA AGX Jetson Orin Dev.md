@@ -15,12 +15,15 @@ The Jetson utilizes 2 CAN busses CAN0 and CAN1. The pins need to be formatted ve
 
 1. `source enable_CAN.sh`
 
-For low level testing it is beneficial to use the CAN line for verification. The jetson uses the linux [[can utils]] package. 
+For low level testing it is beneficial to use the CAN line for verification. The jetson uses the [[Linux]] [[can utils]] package. 
 
-
+NVIDIA CAN guide
 https://docs.nvidia.com/jetson/archives/r35.4.1/DeveloperGuide/text/HR/ControllerAreaNetworkCan.html
 
 
 
 
 # Resources
+
+A Forum Post I made
+https://forums.developer.nvidia.com/t/socket-can-sending-incorrect-messages/322038/6

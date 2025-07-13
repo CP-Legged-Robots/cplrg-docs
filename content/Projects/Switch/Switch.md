@@ -45,9 +45,10 @@ The Switch uses FOC brushless motors, a 9 axis IMU, a lithium polymer battery wi
 ## Remote Access the Jetson
 
 1. Power on the Jetson while close to the linked router.
-2. Power on remote access computer and open [[NoMachine]].
-3. Click on "orin" to connect to the Jetson.
-4. Setup system monitor and enter password if prompted.
+2. Connect remote access computer to router. 
+3. Open [[NoMachine]] on remote access computer.
+4. Click on "orin" to connect to the Jetson.
+5. Setup system monitor and enter password if prompted.
 
 **Additional Resources**
 Jetson Hacks NoMachine Tutorial
@@ -111,3 +112,4 @@ Running zeroed hardware for data or a ROS bag file.
 1. Launch Foxglove.
 	1. `source CLFoxglove `
 2. Open Foxglove in your browser and access the port or open the VS code popup.
+
