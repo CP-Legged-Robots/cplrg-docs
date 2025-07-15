@@ -2,6 +2,8 @@
 title: Cal Poly Legged Robotics Group
 ---
 # Onboarding
+
+
 ## Things to learn:
 - ROS2
 	- ROS2 control

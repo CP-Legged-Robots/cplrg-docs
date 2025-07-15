@@ -6,6 +6,8 @@ Last updated: July 11, 2025
 
 The Cal Poly Switch is a custom 8 degree of freedom quadrupedal robot and educational development platform to give students absolute freedom for legged robotics development. 
 
+![[Switch_standing.jpg]]
+
 The Cal Poly Legged Robotics Switch project is an advanced quadrupedal robot application that is modular and mobile written in ROS2. The software and hardware were designed to be encapsulated so future work can pull built solutions and not rework finished solutions. The Switch project was performed from 2023-2025 for Jeremy West's thesis. 
 
 #### Objectives
