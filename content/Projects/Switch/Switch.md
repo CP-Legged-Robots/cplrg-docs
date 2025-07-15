@@ -1,6 +1,5 @@
 # Switch
 Author: Jeremy West
-Last updated: July 11, 2025
 
 # Overview
 
@@ -25,9 +24,12 @@ A software stack was created to solve several common issues in mobile robotics.
 The Switch uses FOC brushless motors, a 9 axis IMU, a lithium polymer battery with a custom power distribution board, and an on board NVIDIA AGX Jetson Orin Dev. An overview of the hardware may be observed below. 
 
 [[GIM8108 Motor]]
-[[BNO08X]]
-[[Lipo Batteries]]
+[[BNO08x]]
+[[LiPo Batteries]]
 [[NVIDIA AGX Jetson Orin Dev]]
+
+# Wired Communication
+![[comms.drawio.png]]
 
 # Software
 
@@ -39,6 +41,14 @@ The Switch uses FOC brushless motors, a 9 axis IMU, a lithium polymer battery wi
 [[DevContainer]]
 [[Docker]]
 [[CAN Utils]]
+
+# Wireless Communication
+
+![[SwitchWirelessComms.png]]
+
+
+
+
 
 
 
@@ -115,3 +125,8 @@ Running zeroed hardware for data or a ROS bag file.
 	1. `source CLFoxglove `
 2. Open Foxglove in your browser and access the port or open the VS code popup.
 
+# Debugging
+
+
+
+![[SystemDependencies.drawio.png]]

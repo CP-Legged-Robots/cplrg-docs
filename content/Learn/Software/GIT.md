@@ -51,6 +51,9 @@ Jack fixes the code in the MPC branch and merges it into main. Jeremy can pull t
 Nick the new guy is exited to help but too nervous to ask questions and writes some code and pushes it to main. Everyone cries. In the distance, sirens. 
 
 
+When Jeremy tries to push code to main he gets a merge error. 
+
+
 
  
 Typical
