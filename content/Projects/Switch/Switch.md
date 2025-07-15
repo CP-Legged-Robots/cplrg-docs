@@ -1,4 +1,3 @@
-# Switch
 Author: Jeremy West
 
 # Overview
@@ -29,8 +28,22 @@ The Switch uses FOC brushless motors, a 9 axis IMU, a lithium polymer battery wi
 [[NVIDIA AGX Jetson Orin Dev]]
 
 # Wired Communication
+
+The Switch runs on board communication connected to the NVIDIA Jetson AGX
+Orin through 2 standard protocols: I2C and CAN. The I2C bus is connected to the
+BNO08x IMU for body orientation measurements. The CAN communication is split
+to 2 buses to reduce bandwidth. A diagram of the communication system of the
+Switch is denoted below.
+
 ![[comms.drawio.png]]
 
+The motors on board the Switch are controlled over the CAN0 and CAN1 busses.
+These buses are also connected the Power Distribution Board (PDB) to access battery
+and power state information. Note while CAN bus 0 and CAN bus 1 are both
+connected to the PDB, they communicate with the 2 separate ICs. The 2 CAN
+buses are not connected together and are independent. The Jetson has ports for
+CAN in and out, which pass into a CAN transceiver to convert to standard bus CAN
+high and CAN low.
 # Software
 
 [[NoMachine]]
@@ -42,15 +55,45 @@ The Switch uses FOC brushless motors, a 9 axis IMU, a lithium polymer battery wi
 [[Docker]]
 [[CAN Utils]]
 
+The software in the tech stack may be organized into roles of remote access, robotic
+framework, and environment handling. An overview of the development stack is
+shown below.
+
+![[stack.png]]
+
+Starting at the lower level, [[VSCode]] was used as a text editor in conjunction with the
+development container extension and a project specific docker container to create a
+full coding environment. To handle dependencies, the [[Docker]] file creates a stripped
+down virtual machine for the user to run their code in. The [[DevContainer]] (developer container) turns this docker file into a full coding environment in VSCode, with Linux terminal access, and intuitive editing on project files. Additionally the developer container
+file handles all permission configurations and port routing simplifying the running
+process of the Docker file. The end result is an encapsulated coding environment to
+handle all background configuration for the project.
+
+[[ROS2]] and [[ROS2 Control]] handle the robot framework with [[Zenoh]] a Rust based Web-
+Sockets manager handling data transfer. Drivers and controllers are implemented in
+ROS2 Control and programs are managed through ROS2. ROS2 jazzy, Zenoh, and
+their dependencies are listed in the Docker file. Configurations and port forwarding
+necessary for the wireless communications used by ROS are set up in the dev con-
+tainer. For development on board the mobile robot, [[NoMachine]] was used for remote
+admin access of the Jetson over WiFi. This allows full capabilities for development of
+the mobile robot without tangles or range limits introduced by wired communication.
+
+The local network also manages ROS2 sessions. Any machine connected to the router
+can access the active ROS2 session on board the Jetson with use of the ROS2 middle
+ware. A user running ROS may then open up a foxglove web socket to run the
+[[Foxglove]] interface locally for data visualization and debugging.
+
+
+
 # Wireless Communication
+
+Wireless communication on the Switch is hosted by a router. By connecting the Jetson and the user, different services may be utilized. 
 
 ![[SwitchWirelessComms.png]]
 
+Standard operation sees a user remote into the Jetson via NoMachine for full Admin access to the machine. This remote access user has all of the same capabilities of a user who hooked up a display and keyboard directly to the Jetson. 
 
-
-
-
-
+Additionally through the use of ROS2 middle ware, additional ROS2 users can gain access to the ROS2 workspace, meaning they can monitor data and even run remote control with a lower level of access. 
 
 # Tutorials
 
