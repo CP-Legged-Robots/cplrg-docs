@@ -42,11 +42,6 @@ ROS2 has some interesting characteristics. These nodes are running a bit randoml
 
 
 
-# Tutorials
-
-
-
-
 
 
 

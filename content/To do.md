@@ -1,7 +1,7 @@
 
 
 
-# On boarding
+# Onboarding
 
 ## Things to learn:
 - ROS2
@@ -35,7 +35,7 @@
 CPLRG homepage
 - [[Projects]]
 	- [[Switch]]
-	- [[8-DOF MPC]]
+	- [[Overview]]
 	- [[John's Thesis]]
 	- [[Bradley's Thesis]]
 	- [[Planar bounding robot thesis]]
@@ -55,7 +55,7 @@ CPLRG homepage
 		- [[Steadywin motors]]
 		- [[Jetson]]
 		- [[IMU]]
-	- [[Communication protocols]]
+	- [[Communication Protocols]]
 		- [[I2C]] 
 		- [[SPI]]
 		- [[CAN]]
@@ -81,19 +81,8 @@ Isaac
 
 **Jack**
 8-DOF MPC
-Bradley's Thesis
-Planar bounding robot thesis
-BRUCE platform
-Communication protocols and all subpages
-PDB tutorial
-MPC sim tutorial
-Gazebo
-Members
-Guidelines to editing this documentation
 
 **Both**
-ROS2 control
-ROS2
 Homepage
 Python
 C/C++

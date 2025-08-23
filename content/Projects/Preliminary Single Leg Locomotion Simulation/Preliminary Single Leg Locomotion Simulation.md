@@ -1,0 +1,1 @@
+[Controlling Locomotion of a Robotic Leg](https://digitalcommons.calpoly.edu/mesp/600/)

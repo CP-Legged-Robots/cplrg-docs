@@ -1,4 +1,4 @@
-Research and development opportunities are open! CPLRG is currently looking for some specialists!
+Research and development opportunities are open! CPLRG is currently looking for some specialists.
 
 # Power Distribution Board Designer
 ### **Major:** Electrical Engineering
