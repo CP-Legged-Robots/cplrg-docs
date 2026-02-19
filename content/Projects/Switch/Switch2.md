@@ -46,7 +46,12 @@ motors on a given CAN bus.
 The same development stack used in the original Switch [Software](./Switch.md#software) section was reused. However, the default ROS middleware was used
 instead of [[Zenoh]]. 
 
-To connect to Switch-2, the same wireless communication protocol was used as described in [Wireless Communication](./Switch.md#wireless communication). 
+To connect to Switch-2, the same wireless communication protocol was used as described in [Wireless Communication](./Switch.md#wireless-communication). 
+
+# Test Nodes
+
+To create a seamless transfer from sim-to-real, test nodes were developed to 
+standardize testing procedures in both simulation and on hardware. 
 
 # Tutorials
 
@@ -121,7 +126,7 @@ Started hardware
 5. Close zeroing controller to free up command interfaces. 
 `source CLdeactivatezero.sh`
 
-### Running static controller
+### Running Static Joint Controller
 
 With the static controller activated, the leg is now capable of recieving 
 position commands with specified gains. 
@@ -141,3 +146,15 @@ double values of desired motor positions in radians.
 are tuned for the 3 DOF leg. 
     * Set Kp gains: `ros2 topic pub -1 /static_joints_controller/kp_commands std_msgs/msg/Float64MultiArray "{data: [10.0, 15.0, 50.0]}"`
     * Set Kd gains: `ros2 topic pub -1 /static_joints_controller/kd_commands std_msgs/msg/Float64MultiArray "{data: [0.2, 0.5, 1.0]}"`
+
+### Running Test Nodes
+
+**Prerequisites**
+Static joint controller must be activated
+
+Forward (FK) and inverse kinematic (IK) tests **specific to this 3 DOF leg configuration**
+can be run by launching ROS2 nodes that handle publishing joint commands to the 
+static joint controller. 
+
+1. Launch the FK test. `ros2 launch rl12dof_urdf_description FKTest.launch.py`
+2. Launch the IK test. `ros2 launch rl12dof_urdf_description IKTest.launch.py`
