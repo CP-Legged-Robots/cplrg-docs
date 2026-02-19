@@ -103,5 +103,20 @@ Startup Switch-2 coding environment (dev/Docker container) .
     * CHECK AND UNDERSTAND VOLTAGE LIMITS BEFORE USE. YOU CAN BLOW UP A BATTERY.
 	* [[LiPo Batteries]]
 	* Messages on both busses should be reporting battery voltage in hex. 
-4. Launch the real hardware controller manager to startup hardware. `source rebuild.sh`
-6. Complete [[Switch Operation Checklist]] to ensure everything is working smoothly.
+4. Complete [[Switch Operation Checklist]] to ensure everything is working smoothly.
+5. Launch the real hardware controller manager to startup hardware. `source rebuild.sh`
+    * Indicator lights on motors should all turn green after running this step.
+    * A ______ confirmation message in terminal will appear to indicate a 
+    success.
+
+### Running Zeroing
+
+**Prerequisites**
+Started hardware
+
+1. Move robot into defined zero position and maintain zero position by hand. 
+2. In a new terminal, launch zeroing controller. `source zerocontrol.sh`  
+    * Switch-2 will immediately set zero states upon running this step.
+4. Inspect terminal for errors.
+5. Close zeroing controller to free up command interfaces. 
+`source CLdeactivatezero.sh`
