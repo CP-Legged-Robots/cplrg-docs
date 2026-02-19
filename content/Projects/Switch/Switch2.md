@@ -20,7 +20,7 @@ manufacturing, and initial validation of this system was performed from
 # Hardware
 
 Switch-2 reuses much of the same components featured in the original 
-Switch [Hardware](./Switch.md#software). The following components are either 
+Switch [Hardware](./Switch.md#hardware). The following components are either 
 already or are intended to be implemented in the future. 
 
 [[GIM8108 Motor]]
@@ -46,7 +46,7 @@ motors on a given CAN bus.
 The same development stack used in the original Switch [Software](./Switch.md#software) section was reused. However, the default ROS middleware was used
 instead of [[Zenoh]]. 
 
-To connect to Switch-2, the same wireless communication protocol was used as described in [Wireless Communication](./Switch.md#software). 
+To connect to Switch-2, the same wireless communication protocol was used as described in [Wireless Communication](./Switch.md#wireless communication). 
 
 # Tutorials
 
@@ -120,3 +120,24 @@ Started hardware
 4. Inspect terminal for errors.
 5. Close zeroing controller to free up command interfaces. 
 `source CLdeactivatezero.sh`
+
+### Running static controller
+
+With the static controller activated, the leg is now capable of recieving 
+position commands with specified gains. 
+
+**Prerequisites**
+Hardware zerod and zero controller deactivated
+
+1. Launch static joint controller. `source staticcontrol.sh`
+    * The leg will drive to the initial position with inital gains as specified 
+    in `controller.yaml`
+2. To drive joints run `ros2 topic pub /static_joints_controller/commands std_msgs/msg/Float64MultiArray "{data: [0.0, 0.0, 0.0]}"` where the data array contains 
+double values of desired motor positions in radians. 
+    * **Before sending a command** be sure wires will not snag and that the leg is
+    capable of desired pose.
+    * `Ctrl + C` to stop publishing position command continuously.
+3. At any point gains can be changed from defaults. The following set of gains 
+are tuned for the 3 DOF leg. 
+    * Set Kp gains: `ros2 topic pub -1 /static_joints_controller/kp_commands std_msgs/msg/Float64MultiArray "{data: [10.0, 15.0, 50.0]}"`
+    * Set Kd gains: `ros2 topic pub -1 /static_joints_controller/kd_commands std_msgs/msg/Float64MultiArray "{data: [0.2, 0.5, 1.0]}"`
