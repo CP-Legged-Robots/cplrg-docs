@@ -39,5 +39,10 @@ motors on a given CAN bus.
 
 ![[Wiring Diagram.png]]
 
+[!NOTE]
+For single-leg testing, only CAN bus 0 was used. 
 
 # Software
+
+The same development stack used in the original Switch [Software](./Switch.md#software) section was reused. However, the default ROS middleware was used
+instead of [[Zenoh]]. 
