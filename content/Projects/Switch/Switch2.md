@@ -26,3 +26,18 @@ implemented in the future.
 [[GIM8108 Motor]]
 [[BNO08x]]
 [[NVIDIA AGX Jetson Orin Dev]]
+
+The notable change would be the switch to [[Li-ion Batteries]]. Li-ion batteries
+were purchased and mounted to the chassis but are yet to be implemented with the 
+PDB system. 
+
+# Wired Communication
+
+The wired communication for Switch-2 carries over the same set up as the 
+original Switch with the addition of hip roll motors. This results in 2 more 
+motors on a given CAN bus. 
+
+![[Wiring Diagram.png]]
+
+
+# Software
