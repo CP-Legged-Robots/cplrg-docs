@@ -93,7 +93,7 @@ Wireless communication on the Switch is hosted by a router. By connecting the Je
 
 Standard operation sees a user remote into the Jetson via NoMachine for full Admin access to the machine. This remote access user has all of the same capabilities of a user who hooked up a display and keyboard directly to the Jetson. 
 
-Additionally through the use of ROS2 middle ware, additional ROS2 users can gain access to the ROS2 workspace, meaning they can monitor data and even run remote control with a lower level of access. 
+Additionally through the use of ROS2 middleware, additional ROS2 users can gain access to the ROS2 workspace, meaning they can monitor data and even run remote control with a lower level of access. 
 
 # Tutorials
 
