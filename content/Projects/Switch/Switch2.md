@@ -50,14 +50,23 @@ To connect to Switch-2, the same wireless communication protocol was used as des
 
 # Test Nodes
 
-To create a seamless transfer from sim-to-real, test nodes were developed to 
-standardize testing procedures in both simulation and on hardware. 
+To create a seamless transfer of control from sim-to-real, test nodes were 
+developed to standardize testing procedures.
+This allows for control implementation to be verified in simulation prior to 
+deploying on hardware. 
+
+A safety script is also implemented into each test to validate commands. This 
+script rejects: 
+
+1. Commands outside specified joint limits
+2. Trivial singularity configurations
+3. Commands that do not meet the Yoshikawa manipulibility measure threshold
 
 # Tutorials
 
 ## Single-leg Gazebo Simulation
 
-## Single-leg Hardware Testing
+## Controlling Single-leg Hardware 
 
 ### Remote Access the Jetson
 
@@ -96,23 +105,26 @@ https://www.youtube.com/watch?v=X7guekGZM20)
 **Prerequisites**
 Startup Switch-2 coding environment (dev/Docker container) .
 
-1. To use ROS2, source  Jazzy in one terminal by running `source startup.sh`
+1. To use ROS2, source Jazzy in one terminal by running `source startup.sh`
 2. In all additional terminals run `source new.sh`
+    * If you see "ros2: command not found", this script should fix it.
 
 ### Startup Hardware
 1. Complete [[Switch Pre-Startup Checklist]].
 2. Startup CAN bus with `source enable_CAN.sh`
     * Run this in a terminal outside of VSCode.
-    * The file location should be in the Jetson Documents
+    * The file location should be in the Jetson "Home" directory
 3. Connect the battery to Switch. 
     * CHECK AND UNDERSTAND VOLTAGE LIMITS BEFORE USE. YOU CAN BLOW UP A BATTERY.
 	* [[LiPo Batteries]]
 	* Messages on both busses should be reporting battery voltage in hex. 
-4. Complete [[Switch Operation Checklist]] to ensure everything is working smoothly.
-5. Launch the real hardware controller manager to startup hardware. `source rebuild.sh`
+4. Complete [[Switch Operation Checklist]] to ensure everything is working 
+smoothly.
+5. Launch the real hardware controller manager to startup hardware. 
+`source rebuild.sh`
     * Indicator lights on motors should all turn green after running this step.
-    * A ______ confirmation message in terminal will appear to indicate a 
-    success.
+    * The message "Resource Manager has been successfully initialized." will 
+    indicate a success.
 
 ### Running Zeroing
 
@@ -122,6 +134,7 @@ Started hardware
 1. Move robot into defined zero position and maintain zero position by hand. 
 2. In a new terminal, launch zeroing controller. `source zerocontrol.sh`  
     * Switch-2 will immediately set zero states upon running this step.
+    * You should observe that the leg can now maintain its position under gravity.
 4. Inspect terminal for errors.
 5. Close zeroing controller to free up command interfaces. 
 `source CLdeactivatezero.sh`
