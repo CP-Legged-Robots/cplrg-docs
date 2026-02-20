@@ -63,8 +63,43 @@ script rejects:
 3. Commands that do not meet the Yoshikawa manipulibility measure threshold
 
 # Tutorials
+---
 
 ## Single-leg Gazebo Simulation
+
+### Startup Switch-2 Coding Environment
+
+1. Open Switch-2 Gazebo simulation project in VSCode.
+    * Ensure this repo is cloned to locally: [SL simulation project](
+      https://github.com/samurai-kai/quadruped_gazebo)
+3. Open reopen project in docker container.
+    * Ensure the Docker and devcontainer extensions are installed for VSCode. 
+    * Press "Open a remote window" button in bottom left corner of VSCode, then
+    "Reopen in Container" from menu.
+4. The system should be operational and ready to start
+
+**Additional Resources**
+
+[Devcontainer startup at 2:40](
+https://www.youtube.com/watch?v=X7guekGZM20)
+
+### Launch Gazebo Simulation
+
+1. To use ROS2, source Jazzy in one terminal by running `source startup.sh` 
+2. Run `source rebuild_sim.sh` to launch Gazebo 
+3. `Ctrl + C` will close the simulation environment. 
+
+### Running Test Nodes in Simulation
+
+Forward (FK) and inverse kinematic (IK) tests **specific to this 3 DOF leg configuration**
+can be run by launching ROS2 nodes that handle publishing joint commands to the 
+joint group position controller via the command topic `/joint_group_position_controller/commands`. 
+
+1. Launch the FK test. `source FKtest.sh`
+2. Launch the IK test. `source IKtest.sh`
+3. `Ctrl + C` will end a test.
+
+---
 
 ## Controlling Single-leg Hardware 
 
@@ -160,14 +195,14 @@ are tuned for the 3 DOF leg.
     * Set Kp gains: `ros2 topic pub -1 /static_joints_controller/kp_commands std_msgs/msg/Float64MultiArray "{data: [10.0, 15.0, 50.0]}"`
     * Set Kd gains: `ros2 topic pub -1 /static_joints_controller/kd_commands std_msgs/msg/Float64MultiArray "{data: [0.2, 0.5, 1.0]}"`
 
-### Running Test Nodes
+### Running Test Nodes on Hardware
 
 **Prerequisites**
 Static joint controller must be activated
 
 Forward (FK) and inverse kinematic (IK) tests **specific to this 3 DOF leg configuration**
 can be run by launching ROS2 nodes that handle publishing joint commands to the 
-static joint controller. 
+static joint controller via the command topic `/static_joints_controller/commands`. 
 
 1. Launch the FK test. `ros2 launch rl12dof_urdf_description FKTest.launch.py`
 2. Launch the IK test. `ros2 launch rl12dof_urdf_description IKTest.launch.py`
