@@ -3,8 +3,7 @@ to attend to. Battery voltage must be accounted for to interface with all other 
 board hardware components. Battery capacity (expressed in mAh) will dictate how long the system can run before needing to be recharged. Battery discharge rate is the max amperage the battery can provide at one time without catastrophic failure. In addition, the power density of the battery dictates how much power per unit of mass the battery type
 can provide.
 
-Lithium Polymer (LiPo) batteries and Lithium Ion batteries offer high energy den-
-sities and are mass manufactured offering an affordable power solution. Li Ion cells
+Lithium Polymer (LiPo) batteries and Lithium Ion batteries offer high energy densities and are mass manufactured offering an affordable power solution. Li Ion cells
 are more energy dense but are limited in their discharge rate, thus to achieve higher
 current, more cells are necessary. Lithium Polymer are less energy dense, and are more
 unstable with a higher potential for a lithium battery fire in the case they are mishandled, but have a higher possible discharge rate per cell.
