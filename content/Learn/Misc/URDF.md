@@ -2,6 +2,10 @@
 
 A **URDF (Unified Robot Description Format)** file is an XML-based format used in ROS to describe the physical structure of a robot. It defines the robot’s kinematic structure, geometry, and inertial properties so that simulation, visualization, and control tools can correctly interpret the system.
 
+It is inevitable that the robot’s URDF will require updates whenever hardware is added or modified. In a simulation environment, keeping the URDF current is essential to ensure accurate visualization, kinematics, collision behavior, and dynamic response.
+
+For physical hardware operation, URDF updates are primarily necessary when changes affect the robot’s kinematic structure — such as adding or removing an actuator, modifying joint types, or altering link geometry. Minor hardware changes that do not affect the robot’s structure (e.g., electronics, wiring, or embedded components) typically do not require URDF modifications.
+
 A URDF model is built from two fundamental elements: **links** and **joints**.
 
 ## Links
