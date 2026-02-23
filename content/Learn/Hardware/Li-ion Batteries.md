@@ -28,5 +28,12 @@ user-friendly for long-term deployment in robotic systems.
 
 # Switch-2 Installation
 
-The following forum shos the intended work required to fully adapt the Li-ions 
-to Switch-2 for compatibility with the [[Power Distribition Board]]. 
+The following forum shows the intended work required to fully adapt the Li-ions 
+to Switch-2 for compatibility with the [[Power Distribution Board]]. 
+
+**Original project:** https://www.thingiverse.com/thing:4331642
+
+**Expanded project:** https://www.thingiverse.com/thing:6680180
+
+![[Li-Ion Mount.png]]
+![[Li-Ion Contacts.png]]
