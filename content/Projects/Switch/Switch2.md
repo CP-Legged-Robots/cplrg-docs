@@ -206,3 +206,7 @@ static joint controller via the command topic `/static_joints_controller/command
 
 1. Launch the FK test. `ros2 launch rl12dof_urdf_description FKTest.launch.py`
 2. Launch the IK test. `ros2 launch rl12dof_urdf_description IKTest.launch.py`
+
+
+### Video Tutorial
+[![Video title](https://img.youtube.com/vi/-StZYzuxqWE/hqdefault.jpg)](https://youtu.be/-StZYzuxqWE)
