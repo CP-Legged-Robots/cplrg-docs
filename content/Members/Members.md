@@ -1,8 +1,8 @@
 Current
-[[Kai De La Cruz]]
 [[Allan Pham]]
 
 Past
+[[Kai De La Cruz]]
 [[Jeremy West]]
 [[Jack Butler]]
 [[John Benett]]
